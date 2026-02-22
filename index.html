@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felipe Gajardo - Investigador</title>
+    <title>Felipe Gajardo - Researcher</title>
     <!-- Preload fonts for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
             --accent-color: #3b82f6;
             --accent-hover: #60a5fa;
             --border-color: rgba(255, 255, 255, 0.08);
-            --shadow-subtle: 0 8px 32px rgba(0, 0, 0, 0.6);
+            --shadow-subtle: 0 8px 32px rgba(0, 0, 0, 0.8);
             --transition-speed: 0.3s;
         }
 
@@ -38,11 +38,26 @@
             align-items: center;
             padding: 2rem;
             line-height: 1.6;
-            /* Modern ambient glows behind the card */
-            background-image:
-                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.06), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.06), transparent 25%);
+
+            /* Background image settings */
+            background-image: url('img/bkg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
+        }
+
+        /* Overlay to ensure the background image doesn't clash with the text */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            /* Semi-transparent overlay */
+            z-index: -1;
         }
 
         .profile-card {
@@ -80,7 +95,6 @@
             font-size: 2.2rem;
             font-weight: 500;
             color: #ffffff;
-            /* Glow effect on the avatar */
             box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
             border: 2px solid rgba(255, 255, 255, 0.15);
             user-select: none;
@@ -228,21 +242,32 @@
         </div>
 
         <h1 class="name">Felipe Gajardo</h1>
-        <h2 class="title">Bioinformático & Investigador</h2>
+        <h2 class="title">Bioinformatician & Researcher</h2>
 
-        <!-- Resumen Ejecutivo -->
+        <!-- Executive Summary -->
         <div class="summary-wrapper">
             <p class="summary">
-                Bienvenido a mi espacio digital. Dedicado a explorar la genómica y la biología computacional. Aquí
-                comparto herramientas analíticas, tutoriales, datos y reflexiones adquiridas en la intersección de la
-                biología y la ciencia de datos.
+                Welcome to my digital space. Dedicated to exploring genomics and computational biology. Here I share
+                analytical tools, tutorials, data, and reflections acquired at the intersection of biology and data
+                science.
             </p>
         </div>
 
-        <!-- Enlaces a páginas externas -->
-        <nav class="links-container" aria-label="Enlaces Externos">
-            <h3 class="shared-title">Recursos y Perfiles</h3>
+        <!-- External Links -->
+        <nav class="links-container" aria-label="External Links">
+            <h3 class="shared-title">Resources & Profiles</h3>
 
+            <a href="https://scholar.google.com/citations?user=Bzssr5AAAAAJ&hl=es" target="_blank"
+                rel="noopener noreferrer" class="link-item">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                </span>
+                Scientific Publications
+            </a>
             <a href="https://github.com/fgajardoe" target="_blank" rel="noopener noreferrer" class="link-item">
                 <span class="icon">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -252,17 +277,31 @@
                         </path>
                     </svg>
                 </span>
-                Proyectos (GitHub)
+                Projects (GitHub)
             </a>
-            <a href="#" class="link-item">
+            <a href="https://www.linkedin.com/in/felipe-gajardo-escobar-a6a23489/?locale=en_US" target="_blank"
+                rel="noopener noreferrer" class="link-item">
                 <span class="icon">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
                     </svg>
                 </span>
-                Publicaciones Científicas
+                LinkedIn
+            </a>
+            <a href="https://youtu.be/TRVZU5oGETM" target="_blank" rel="noopener noreferrer" class="link-item">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                        </path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                    </svg>
+                </span>
+                Bases, Beats, and Bits (talk in spanish)
             </a>
             <a href="#" class="link-item" title="Blog Bit Polymerase">
                 <span class="icon">
@@ -282,13 +321,13 @@
                         <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
                 </span>
-                Contacto
+                Contact
             </a>
         </nav>
 
         <footer class="footer">
             &copy;
-            <script>document.write(new Date().getFullYear())</script> Felipe Gajardo. Todos los derechos reservados.
+            <script>document.write(new Date().getFullYear())</script> Felipe Gajardo. All rights reserved.
         </footer>
     </main>
 
